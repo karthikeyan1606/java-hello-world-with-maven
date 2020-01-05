@@ -18,7 +18,7 @@ sh 'mvn clean install'
 }
   
   stage('renaming jar'){
-    sh 'sudo $WORKSPACE/target/jb*.jar $WORKSPACE/target/${version}'
+    sh 'mv $WORKSPACE/target/jb*.jar $WORKSPACE/target/${version}'
     sh 'ls -la $WORKSPACE/target'
   }
   
