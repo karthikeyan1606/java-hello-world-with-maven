@@ -15,14 +15,16 @@ sh 'mvn clean test'
 }
 
 stage('Build'){
-echo "Building app with version ${version}"
+echo "Building app with Name ${appName}"
 sh 'mvn clean install'
 }
   
   stage('renaming jar'){
+    def build_number =  BUILD_NUMBER
+    def version = major_version + build_number
     sh 'mv $WORKSPACE/target/jb*.jar $WORKSPACE/target/"${version}".jar'
-    sh 'ls -la $WORKSPACE/target'
-    echo "The current app Name is ${version}"
+    echo "The current application name is {appName}.${appVersion}.jar"
+    sh 'ls -la target/'
   }
   
 }
