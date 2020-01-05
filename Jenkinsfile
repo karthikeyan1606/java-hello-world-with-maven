@@ -17,7 +17,7 @@ stage('Build'){
 sh 'mvn clean install'
 }
   
-  stage{
+  stage('renaming jar'){
     sh '$WORKSPACE/target/jb*.jar $WORKSPACE/target/${version}'
     sh 'ls -la $WORKSPACE/target'
   }
