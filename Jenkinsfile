@@ -14,6 +14,7 @@ sh 'mvn clean test'
 }
 
 stage('Build'){
+echo "Building app with version ${version}"
 sh 'mvn clean install'
 }
   
