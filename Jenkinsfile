@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 def appName= 'testing'
 def major_version = 1.0 
-def version =appName + '-' + major_version + '.' + $BUILD_NUMBER
+def version =appName + '-' + major_version + '.' + env.$BUILD_NUMBER
 
 node{ 
 
@@ -9,7 +9,7 @@ stage('cloning repo'){
   checkout scm
 }
 
-  stage('Build'){
+  stage('Test'){
 sh 'mvn clean test'
 }
 
