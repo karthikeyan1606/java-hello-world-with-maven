@@ -21,7 +21,7 @@ sh 'mvn clean install'
   
   stage('renaming jar'){
     def build_number =  BUILD_NUMBER
-    def version = major_version + build_number
+    def appVersion = major_version + build_number
     sh 'mv $WORKSPACE/target/jb*.jar $WORKSPACE/target/"${version}".jar'
     echo "The current application name is {appName}.${appVersion}.jar"
     sh 'ls -la target/'
