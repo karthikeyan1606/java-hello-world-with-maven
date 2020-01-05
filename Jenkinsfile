@@ -1,8 +1,6 @@
 #!/usr/bin/env groovy
 def appName= 'testing'
 def major_version = 1.0 
-def build_number =  BUILD_NUMBER
-def version =appName + '-' + major_version + '.' + build_number
 
 node{ 
 
